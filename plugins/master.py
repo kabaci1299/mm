@@ -8,7 +8,7 @@ from master import masterdl
 async def account_login(bot, m):
     try:
         Credit = Config.CREDIT
-        editable = await m.reply_text('__Send 🗂️Master TXT🗂️ file for download__')
+        editable = await m.reply_text('__Send TXT file for download__')
         
         # Listen for the document file
         input = await bot.listen(chat_id=m.chat.id, filters=filters.document & filters.user(m.from_user.id))
@@ -72,10 +72,11 @@ async def account_login(bot, m):
         try:
             await bot.send_message(chat_id=channel_id, text=f'🎯**Target Batch - {b_name}**')
         except Exception as e:
-            await m.reply_text(f"**Please remake a admin in channel..**\n\n**Bot Made By** 🔰『{Credit}🔰")
+            await m.reply_text(f"**Please remake a admin in channel..**\n\n**Bot Made By** {Credit}")
             channel_id = m.chat.id
         await editable.delete()
         await masterdl.process_links(links, raw_text, raw_text2, token, b_name, MR, channel_id, bot, m, path, thumb, Credit)
     except Exception as e:
-        await m.reply_text(f"**⚠️Downloading Failed⚠️**\n\n**Fail Reason »** {e}\n\n**╰────⌈✨❤️ 『{Credit}』 ❤️✨**⌋────╯")
+        await m.reply_text(f"**⚠️Downloading Failed⚠️**\n\n**Fail Reason »** {e}\n\n**╰────⌈❤️ 『{Credit}』 ❤️**⌋────╯")
         return
+
