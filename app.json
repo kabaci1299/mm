@@ -1,40 +1,39 @@
-
 {
-    "name": " 𝙎𝘼𝙄𝙉𝙄 𝘽𝙊𝙏𝙎",
-    "description": "Download videos from various websites using this Telegram bot.",
-    "logo": "https://tinypic.host/images/2025/02/07/DeWatermark.ai_1738952933236-1.png",
+    "name": "𝐓𝐞𝐱𝐭 Uploader  ™",
+    "description": "Download videos from various websites using this telegram bot",
+    "logo": "https://envs.sh/srE.jpg",
     "keywords": [
-        "drm-video-dl",
+        "text-video",
         "video-extract",
         "pyrogram"
     ],
-    "repository": "https://github.com/nikhilsainiop/Masteruploader",
-    "success_url": "https://github.com/nikhilsainiop/Masteruploader",
+    "repository": "https://github.com/kabaci1299/11.git",
+    "success_url": "" ,
     "stack": "container",
     "env": {
         "API_ID": {
-            "description": "Enter your Telegram API ID.",
+            "description": "",
             "required": true
         },
         "API_HASH": {
-            "description": "Enter your Telegram API Hash.",
+            "description": "",
             "required": true
         },
         "BOT_TOKEN": {
-            "description": "Enter your Telegram Bot Token.",
+            "description": "Enter your bot token",
             "required": true
-        },
-        "AUTH_USERS": {
-            "description": "Enter your authorized user IDs, e.g., 6801378994,5919400080,...(Seprate by Comma) ",
-            "required": true
-        }
-    },
-    "formation": {
-        "worker": {
-            "quantity": 1,
-            "size": "standard-2x"
         }
     },
     "addons": [],
-    "buildpacks": []
+    "buildpacks": [
+        {
+            "url": "https://github.com/amivin/aria2-heroku.git"
+        },
+        {
+            "url": "heroku/python"
+        },       
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }
+    ]
 }
